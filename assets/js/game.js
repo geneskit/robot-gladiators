@@ -5,14 +5,14 @@
 // "LOSE" - Player robot's health is zero or less
 
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money:10
     reset: function() {
         this.health = 100;
         this.money = 10;
-        this.attack = 10;
+        this.attack = 10
     },
     refillHealth: function() {
         if (this.money >= 7) {
@@ -40,11 +40,11 @@ var enemyInfo = [
     {
         name: "Roborto",
         attack: randomNumber(10, 14)
-    }
+    },
     {
         name: "Amy Android",
         attack: randomNumber(10, 14)
-    }
+    },
     {
         name: "Robo Trumble",
         attack: randomNumber(10, 14)
@@ -117,6 +117,7 @@ var startGame = function() {
     for (var i = 0; i < enemyInfo.length; i++) {
         if (playerInfo.health > 0) {
             window.alert("Welcome to Robot Gladiators! Round: " + (i+1));
+            debugger;
             var pickedEnemyObj = enemyInfo[i];
             pickedEnemyObj.health = randomNumber(40, 60);
             fight(pickedEnemyObj);
@@ -195,5 +196,19 @@ var randomNumber = function(min, max) {
 
     return value;
 }
+
+var getPlayerName = function() {
+    var name = "";
+
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name?");
+        
+    }
+
+    console.log("Your robot's name is " + name);
+    return name;
+}
+
+
 
 startGame();
