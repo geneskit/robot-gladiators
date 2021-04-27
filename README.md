@@ -1,4 +1,4 @@
-# Module 3 Walk-through: Robot Gladiators
+# Module 3 JavaScript Walk-through: Robot Gladiators
 
 ## Description:
 
